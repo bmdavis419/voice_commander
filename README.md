@@ -21,3 +21,14 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 `export GITHUB_CLIENT_ID="your_client_id"
 export GITHUB_CLIENT_SECRET="your_client_secret"`
+
+run: `source .env`
+
+## DB
+
+`docker run --name postgres-voice-dev \
+  -e POSTGRES_PASSWORD=postgres \
+  -e POSTGRES_USER=postgres \
+  -p 5432:5432 \
+  -v pgdata:/var/lib/postgresql/data \
+  -d postgres:15`

@@ -5,9 +5,11 @@ defmodule VoiceCommanderWeb.AuthController do
   alias VoiceCommander.Accounts
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
+    provider_id = to_string(auth.uid)
+
     user_params = %{
       provider: "github",
-      provider_id: auth.uid,
+      provider_id: provider_id,
       name: auth.info.name || auth.info.nickname,
       avatar_url: auth.info.image
     }
