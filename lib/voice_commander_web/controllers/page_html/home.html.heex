@@ -1,0 +1,11 @@
+<.flash_group flash={@flash} />
+
+<%= if @current_user do %>
+  <div class="flex items-center gap-4">
+    <img src={@current_user.avatar_url} class="w-8 h-8 rounded-full" />
+    <span>{@current_user.name}</span>
+    <%!-- {link("Logout", to: ~p"/auth/logout", method: :delete, class: "button")} --%>
+  </div>
+<% else %>
+  <%!-- {link("Login with GitHub", to: ~p"/auth/github", class: "button")} --%>
+<% end %>
