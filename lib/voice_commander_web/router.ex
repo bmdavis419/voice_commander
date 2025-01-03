@@ -39,9 +39,11 @@ defmodule VoiceCommanderWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", VoiceCommanderWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", VoiceCommanderWeb do
+    pipe_through :api
+
+    post "/upload", ImageController, :create
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:voice_commander, :dev_routes) do

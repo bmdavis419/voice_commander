@@ -59,7 +59,12 @@ defmodule VoiceCommander.MixProject do
       {:bandit, "~> 1.5"},
       {:ueberauth_github, "~> 0.8.3"},
       {:jason, "~> 1.4"},
-      {:plug, "~> 1.14"}
+      {:plug, "~> 1.14"},
+      {:ex_aws, "~> 2.5"},
+      {:ex_aws_s3, "~> 2.5"},
+      {:sweet_xml, "~> 0.7"},
+      {:hackney, "~> 1.18"},
+      {:uuid, "~> 1.1"}
     ]
   end
 

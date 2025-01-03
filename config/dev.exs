@@ -4,11 +4,24 @@ import Config
 config :voice_commander, VoiceCommander.Repo,
   username: "postgres",
   password: "postgres",
-  hostname: "localhost",
-  database: "voice_commander_dev",
+  hostname: "127.0.0.1",
+  port: 54322,
+  database: "postgres",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
+
+config :ex_aws,
+  access_key_id: "625729a08b95bf1b7ff351a663f3a23c",
+  secret_access_key: "850181e4652dd023b7a98c58ae0d2d34bd487ee0cc3254aed6eda37307425907",
+  json_codec: Jason
+
+config :ex_aws, :s3,
+  scheme: "http://",
+  host: "localhost",
+  port: 54321,
+  region: "local",
+  endpoint: "http://127.0.0.1:54321/storage/v1/s3"
 
 # For development, we disable any cache and enable
 # debugging and code reloading.

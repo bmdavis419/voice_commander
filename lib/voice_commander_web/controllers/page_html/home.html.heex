@@ -24,4 +24,9 @@
       </.link>
     </div>
   <% end %>
+
+  <.form :let={f} for={%{}} action={~p"/api/upload"} multipart={true}>
+    <.input type="file" field={f[:image]} accept=".png" />
+    <.button>Upload</.button>
+  </.form>
 </div>
